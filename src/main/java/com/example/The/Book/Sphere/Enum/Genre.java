@@ -1,0 +1,33 @@
+package com.example.The.Book.Sphere.Enum;
+
+public enum Genre {
+    FICTION,
+    NON_FICTION,
+    SCIENCE,
+    HISTORY,
+    BIOGRAPHY,
+    FANTASY,
+    MYSTERY,
+    ROMANCE,
+    HORROR,
+    THRILLER,
+    ADVENTURE,
+    POETRY,
+    DRAMA,
+    SELF_HELP,
+    BUSINESS,
+    TECHNOLOGY,
+    PHILOSOPHY,
+    RELIGION,
+    ART,
+    TRAVEL,
+    CHILDREN,
+    YOUNG_ADULT,
+    EDUCATION,
+    LAW,
+    MEDICAL,
+    COMICS,
+    COOKING,
+    SPORTS,
+    MUSIC
+}
