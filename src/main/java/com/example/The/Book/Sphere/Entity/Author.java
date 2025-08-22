@@ -1,5 +1,7 @@
 package com.example.The.Book.Sphere.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,6 +21,7 @@ public class Author {
     private int age;
     private String email;
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    @JsonIgnore
     List<Book> books = new ArrayList<>(); //initially there is no book
                                           // written (an empty list)
 
