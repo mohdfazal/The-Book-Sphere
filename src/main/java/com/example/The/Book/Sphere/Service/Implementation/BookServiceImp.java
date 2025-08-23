@@ -45,4 +45,30 @@ public class BookServiceImp implements BookServiceInterface {
         }
         return allBooks;
     }
+
+    @Override
+    public List<Book> getBookListOfAnAuthorById(Integer id) {
+        Author particularAuthorById = authorRepository.findById(id).get();
+        List<Book> bookListOfAnAuthor = new ArrayList<>();
+
+        if(particularAuthorById.getBooks() != null){
+            bookListOfAnAuthor.addAll(particularAuthorById.getBooks());
+        }
+
+        return bookListOfAnAuthor;
+    }
+
+    // In your Service Implementation
+    @Override
+    public Integer getNumberOfBookByAnAuthorId(Integer id) {
+        Author particularAuthorById = authorRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Author not found with id: " + id));
+
+        if (particularAuthorById.getBooks() == null) {
+            return 0; // No books written
+        }
+
+        return particularAuthorById.getBooks().size();
+    }
+
 }

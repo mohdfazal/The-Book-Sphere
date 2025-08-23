@@ -21,4 +21,15 @@ public class BookController {
     public List<Book> getAllTheBooks(){
         return bookServiceImp.getAllTheBooks();
     }
+
+    @GetMapping("/getBookListOfAnAuthorById")
+    public List<Book> getBookListOfAnAuthorById(@RequestParam Integer id){
+        return bookServiceImp.getBookListOfAnAuthorById(id);
+    }
+
+    @GetMapping("/getNoOfBookWrittenByAnAuthorById")
+    public Integer getNumberOfBookByAnAuthorId(@RequestParam Integer id){
+        return bookServiceImp.getNumberOfBookByAnAuthorId(id);
+    }
+
 }
